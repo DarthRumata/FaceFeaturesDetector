@@ -7,21 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9292A88E1BDFFCAC005CDE76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9292A88D1BDFFCAC005CDE76 /* AppDelegate.swift */; };
-		9292A8901BDFFCAC005CDE76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9292A88F1BDFFCAC005CDE76 /* ViewController.swift */; };
-		9292A8931BDFFCAC005CDE76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9292A8911BDFFCAC005CDE76 /* Main.storyboard */; };
-		9292A8951BDFFCAC005CDE76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9292A8941BDFFCAC005CDE76 /* Assets.xcassets */; };
-		9292A8981BDFFCAC005CDE76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9292A8961BDFFCAC005CDE76 /* LaunchScreen.storyboard */; };
+		9292A8A31BDFFD03005CDE76 /* FaceRecognizeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9292A8A11BDFFD03005CDE76 /* FaceRecognizeController.swift */; };
+		9292A8AB1BDFFD10005CDE76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9292A8A51BDFFD10005CDE76 /* Assets.xcassets */; };
+		9292A8AC1BDFFD10005CDE76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9292A8A61BDFFD10005CDE76 /* LaunchScreen.storyboard */; };
+		9292A8AD1BDFFD10005CDE76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9292A8A81BDFFD10005CDE76 /* Main.storyboard */; };
+		9292A8AE1BDFFD10005CDE76 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9292A8AA1BDFFD10005CDE76 /* Info.plist */; };
+		9292A8B11BDFFD37005CDE76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9292A8B01BDFFD37005CDE76 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9292A88A1BDFFCAC005CDE76 /* FaceFeaturesDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceFeaturesDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9292A88D1BDFFCAC005CDE76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9292A88F1BDFFCAC005CDE76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9292A8921BDFFCAC005CDE76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9292A8941BDFFCAC005CDE76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9292A8971BDFFCAC005CDE76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9292A8991BDFFCAC005CDE76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9292A8A11BDFFD03005CDE76 /* FaceRecognizeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceRecognizeController.swift; sourceTree = "<group>"; };
+		9292A8A51BDFFD10005CDE76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9292A8A71BDFFD10005CDE76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9292A8A91BDFFD10005CDE76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9292A8AA1BDFFD10005CDE76 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9292A8B01BDFFD37005CDE76 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +55,38 @@
 		9292A88C1BDFFCAC005CDE76 /* FaceFeaturesDetector */ = {
 			isa = PBXGroup;
 			children = (
-				9292A88D1BDFFCAC005CDE76 /* AppDelegate.swift */,
-				9292A88F1BDFFCAC005CDE76 /* ViewController.swift */,
-				9292A8911BDFFCAC005CDE76 /* Main.storyboard */,
-				9292A8941BDFFCAC005CDE76 /* Assets.xcassets */,
-				9292A8961BDFFCAC005CDE76 /* LaunchScreen.storyboard */,
-				9292A8991BDFFCAC005CDE76 /* Info.plist */,
+				9292A8A41BDFFD10005CDE76 /* Resources */,
+				9292A89F1BDFFD03005CDE76 /* Classes */,
 			);
 			path = FaceFeaturesDetector;
+			sourceTree = "<group>";
+		};
+		9292A89F1BDFFD03005CDE76 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9292A8AF1BDFFD37005CDE76 /* Core */,
+				9292A8A11BDFFD03005CDE76 /* FaceRecognizeController.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		9292A8A41BDFFD10005CDE76 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9292A8A51BDFFD10005CDE76 /* Assets.xcassets */,
+				9292A8A61BDFFD10005CDE76 /* LaunchScreen.storyboard */,
+				9292A8A81BDFFD10005CDE76 /* Main.storyboard */,
+				9292A8AA1BDFFD10005CDE76 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9292A8AF1BDFFD37005CDE76 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				9292A8B01BDFFD37005CDE76 /* AppDelegate.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,9 +147,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9292A8981BDFFCAC005CDE76 /* LaunchScreen.storyboard in Resources */,
-				9292A8951BDFFCAC005CDE76 /* Assets.xcassets in Resources */,
-				9292A8931BDFFCAC005CDE76 /* Main.storyboard in Resources */,
+				9292A8AB1BDFFD10005CDE76 /* Assets.xcassets in Resources */,
+				9292A8AD1BDFFD10005CDE76 /* Main.storyboard in Resources */,
+				9292A8AC1BDFFD10005CDE76 /* LaunchScreen.storyboard in Resources */,
+				9292A8AE1BDFFD10005CDE76 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,28 +161,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9292A8901BDFFCAC005CDE76 /* ViewController.swift in Sources */,
-				9292A88E1BDFFCAC005CDE76 /* AppDelegate.swift in Sources */,
+				9292A8B11BDFFD37005CDE76 /* AppDelegate.swift in Sources */,
+				9292A8A31BDFFD03005CDE76 /* FaceRecognizeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9292A8911BDFFCAC005CDE76 /* Main.storyboard */ = {
+		9292A8A61BDFFD10005CDE76 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9292A8921BDFFCAC005CDE76 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		9292A8961BDFFCAC005CDE76 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9292A8971BDFFCAC005CDE76 /* Base */,
+				9292A8A71BDFFD10005CDE76 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9292A8A81BDFFD10005CDE76 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9292A8A91BDFFD10005CDE76 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -249,7 +275,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = FaceFeaturesDetector/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FaceFeaturesDetector/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yalantis.FaceFeaturesDetector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -260,7 +286,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = FaceFeaturesDetector/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FaceFeaturesDetector/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yalantis.FaceFeaturesDetector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
