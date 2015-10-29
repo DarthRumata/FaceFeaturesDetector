@@ -16,4 +16,8 @@ extension CGRect {
         return CGPoint(x: x, y: y)
     }
     
+    func scale(scale: CGFloat) -> CGRect {
+        return CGRect(x: origin.x * scale, y: origin.y * scale, width: width * scale, height: height * scale)
+    }
+    
 }

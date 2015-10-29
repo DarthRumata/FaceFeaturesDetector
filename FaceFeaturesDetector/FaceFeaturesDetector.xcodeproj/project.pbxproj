@@ -15,6 +15,8 @@
 		9292A8B11BDFFD37005CDE76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9292A8B01BDFFD37005CDE76 /* AppDelegate.swift */; };
 		9292A8B41BE018B1005CDE76 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9292A8B31BE018B1005CDE76 /* UIImageView.swift */; };
 		92D9660C1BE1993200F4A669 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D9660B1BE1993200F4A669 /* CGRect.swift */; };
+		92D9660F1BE2243300F4A669 /* GeometryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D9660E1BE2243300F4A669 /* GeometryHelper.swift */; };
+		92D966111BE22C1E00F4A669 /* CGpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D966101BE22C1E00F4A669 /* CGpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		9292A8B01BDFFD37005CDE76 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9292A8B31BE018B1005CDE76 /* UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		92D9660B1BE1993200F4A669 /* CGRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
+		92D9660E1BE2243300F4A669 /* GeometryHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeometryHelper.swift; sourceTree = "<group>"; };
+		92D966101BE22C1E00F4A669 /* CGpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 		9292A8AF1BDFFD37005CDE76 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				92D9660D1BE2239D00F4A669 /* Utilities */,
 				9292A8B01BDFFD37005CDE76 /* AppDelegate.swift */,
 			);
 			path = Core;
@@ -99,8 +104,17 @@
 			children = (
 				9292A8B31BE018B1005CDE76 /* UIImageView.swift */,
 				92D9660B1BE1993200F4A669 /* CGRect.swift */,
+				92D966101BE22C1E00F4A669 /* CGpoint.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		92D9660D1BE2239D00F4A669 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				92D9660E1BE2243300F4A669 /* GeometryHelper.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +189,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92D966111BE22C1E00F4A669 /* CGpoint.swift in Sources */,
+				92D9660F1BE2243300F4A669 /* GeometryHelper.swift in Sources */,
 				9292A8B11BDFFD37005CDE76 /* AppDelegate.swift in Sources */,
 				9292A8B41BE018B1005CDE76 /* UIImageView.swift in Sources */,
 				9292A8A31BDFFD03005CDE76 /* FaceRecognizeController.swift in Sources */,
