@@ -17,15 +17,12 @@ extension UIImageView {
             fatalError("There is no image")
         }
         let transformedRect = CGRect(x: rectInImage.origin.x, y: image.size.height - rectInImage.origin.y - rectInImage.height, width: rectInImage.width, height: rectInImage.height)
-        print("transformed: \(transformedRect)")
-        
-        
         let scaledRect = transformedRect.scale(1 / UIImageView.screenScale)
-        print("scaled: \(scaledRect)")
         
         let distortion = calculateImageDistortion()
+        let offset = calculateImageOffset(distortion)
         
-        return CGRect(x: scaledRect.origin.x * distortion.width, y: scaledRect.origin.y * distortion.height, width: scaledRect.width * distortion.width, height: scaledRect.height * distortion.height)
+        return CGRect(x: scaledRect.origin.x * distortion.width + offset.x, y: scaledRect.origin.y * distortion.height + offset.y, width: scaledRect.width * distortion.width, height: scaledRect.height * distortion.height)
     }
     
     func convertImageCoordinateSpace(pointInImage pointInImage: CGPoint) -> CGPoint {
@@ -37,7 +34,8 @@ extension UIImageView {
         let scaledPoint = transformedPoint.scale(1 / UIImageView.screenScale)
         
         let distortion = calculateImageDistortion()
-        return CGPoint(x: scaledPoint.x * distortion.width, y: scaledPoint.y * distortion.height)
+        let offset = calculateImageOffset(distortion)
+        return CGPoint(x: scaledPoint.x * distortion.width + offset.x, y: scaledPoint.y * distortion.height + offset.y)
     }
     
     private func calculateImageDistortion() -> CGSize {
@@ -65,6 +63,16 @@ extension UIImageView {
         }
         
         return CGSize(width: xDistortion, height: yDistortion)
+    }
+    
+    private func calculateImageOffset(distortion: CGSize) -> CGPoint {
+        guard let image = image else {
+            fatalError("There is no image")
+        }
+        
+        let convertedImageSize = CGSize(width: image.size.width * distortion.width / UIImageView.screenScale, height: image.size.height * distortion.height / UIImageView.screenScale)
+        
+        return CGPoint(x: (bounds.width - convertedImageSize.width) / 2, y: (bounds.height - convertedImageSize.height) / 2)
     }
     
 }

@@ -33,14 +33,14 @@ class FaceRecognizeController: UIViewController {
             return
         }
         
+        cleanPhoto()
+        
         let context = CIContext()
         let options: [String: AnyObject] = [CIDetectorAccuracy: CIDetectorAccuracyLow]
         let detector = CIDetector(ofType: CIDetectorTypeFace, context: context, options: options)
         for feature in detector.featuresInImage(ciImage) {
             if let face = feature as? CIFaceFeature {
-                print(face.bounds)
                 let convertedRect = photoView.convertImageCoordinateSpace(rectInImage: face.bounds)
-                print("converted: \(convertedRect)")
                 
                 markFace(convertedRect)
                 markEyes([face.leftEyePosition, face.rightEyePosition])
