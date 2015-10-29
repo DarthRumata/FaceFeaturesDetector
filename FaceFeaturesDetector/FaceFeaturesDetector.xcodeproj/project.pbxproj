@@ -17,6 +17,8 @@
 		92D9660C1BE1993200F4A669 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D9660B1BE1993200F4A669 /* CGRect.swift */; };
 		92D9660F1BE2243300F4A669 /* GeometryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D9660E1BE2243300F4A669 /* GeometryHelper.swift */; };
 		92D966111BE22C1E00F4A669 /* CGpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D966101BE22C1E00F4A669 /* CGpoint.swift */; };
+		92D966131BE2C91800F4A669 /* FaceMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D966121BE2C91800F4A669 /* FaceMarker.swift */; };
+		92D966151BE2CB9100F4A669 /* FaceRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D966141BE2CB9100F4A669 /* FaceRecognizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		92D9660B1BE1993200F4A669 /* CGRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
 		92D9660E1BE2243300F4A669 /* GeometryHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeometryHelper.swift; sourceTree = "<group>"; };
 		92D966101BE22C1E00F4A669 /* CGpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGpoint.swift; sourceTree = "<group>"; };
+		92D966121BE2C91800F4A669 /* FaceMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceMarker.swift; sourceTree = "<group>"; };
+		92D966141BE2CB9100F4A669 /* FaceRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceRecognizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 			children = (
 				92D9660D1BE2239D00F4A669 /* Utilities */,
 				9292A8B01BDFFD37005CDE76 /* AppDelegate.swift */,
+				92D966121BE2C91800F4A669 /* FaceMarker.swift */,
+				92D966141BE2CB9100F4A669 /* FaceRecognizer.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -193,7 +199,9 @@
 				92D9660F1BE2243300F4A669 /* GeometryHelper.swift in Sources */,
 				9292A8B11BDFFD37005CDE76 /* AppDelegate.swift in Sources */,
 				9292A8B41BE018B1005CDE76 /* UIImageView.swift in Sources */,
+				92D966131BE2C91800F4A669 /* FaceMarker.swift in Sources */,
 				9292A8A31BDFFD03005CDE76 /* FaceRecognizeController.swift in Sources */,
+				92D966151BE2CB9100F4A669 /* FaceRecognizer.swift in Sources */,
 				92D9660C1BE1993200F4A669 /* CGRect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
