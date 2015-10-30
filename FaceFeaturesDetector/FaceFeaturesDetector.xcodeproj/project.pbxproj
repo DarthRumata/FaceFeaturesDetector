@@ -19,6 +19,7 @@
 		92D966111BE22C1E00F4A669 /* CGpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D966101BE22C1E00F4A669 /* CGpoint.swift */; };
 		92D966131BE2C91800F4A669 /* FaceMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D966121BE2C91800F4A669 /* FaceMarker.swift */; };
 		92D966151BE2CB9100F4A669 /* FaceRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D966141BE2CB9100F4A669 /* FaceRecognizer.swift */; };
+		92E16C5F1BE3C77600969CE9 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E16C5E1BE3C77600969CE9 /* UIImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		92D966101BE22C1E00F4A669 /* CGpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGpoint.swift; sourceTree = "<group>"; };
 		92D966121BE2C91800F4A669 /* FaceMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceMarker.swift; sourceTree = "<group>"; };
 		92D966141BE2CB9100F4A669 /* FaceRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceRecognizer.swift; sourceTree = "<group>"; };
+		92E16C5E1BE3C77600969CE9 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				9292A8B31BE018B1005CDE76 /* UIImageView.swift */,
 				92D9660B1BE1993200F4A669 /* CGRect.swift */,
 				92D966101BE22C1E00F4A669 /* CGpoint.swift */,
+				92E16C5E1BE3C77600969CE9 /* UIImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				9292A8B41BE018B1005CDE76 /* UIImageView.swift in Sources */,
 				92D966131BE2C91800F4A669 /* FaceMarker.swift in Sources */,
 				9292A8A31BDFFD03005CDE76 /* FaceRecognizeController.swift in Sources */,
+				92E16C5F1BE3C77600969CE9 /* UIImage.swift in Sources */,
 				92D966151BE2CB9100F4A669 /* FaceRecognizer.swift in Sources */,
 				92D9660C1BE1993200F4A669 /* CGRect.swift in Sources */,
 			);
