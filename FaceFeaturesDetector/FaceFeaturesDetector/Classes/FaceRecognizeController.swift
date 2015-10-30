@@ -21,11 +21,13 @@ class FaceRecognizeController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    //MARK: Actions
     @IBAction func chooseImage() {
-        let picker = UIImagePickerController()
-        picker.sourceType = .PhotoLibrary
-        picker.delegate = self
-        presentViewController(picker, animated: true, completion: nil)
+        getNewImage(.PhotoLibrary)
+    }
+    
+    @IBAction func takePhoto() {
+        getNewImage(.Camera)
     }
     
     @IBAction func recognize() {
@@ -43,11 +45,17 @@ class FaceRecognizeController: UIViewController {
         }
         
         for face in faceRecognizer.faces {
-            let convertedRect = photoView.convertImageCoordinateSpace(rectInImage: face.bounds)
-            
-            marker.markFace(convertedRect)
+            marker.markFace(face.bounds)
             marker.markEyes([face.leftEyePosition, face.rightEyePosition])
         }
+    }
+    
+    //MARK: Processing
+    private func getNewImage(sourceType: UIImagePickerControllerSourceType) {
+        let picker = UIImagePickerController()
+        picker.sourceType = sourceType
+        picker.delegate = self
+        presentViewController(picker, animated: true, completion: nil)
     }
     
 }

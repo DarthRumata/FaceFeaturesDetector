@@ -89,14 +89,24 @@
                                     <action selector="chooseImage" destination="BYZ-38-t0r" eventType="touchUpInside" id="TH5-U9-wVz"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tk5-Or-RP6" userLabel="Take photo">
+                                <rect key="frame" x="498" y="503" width="77" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Take photo"/>
+                                <connections>
+                                    <action selector="takePhoto" destination="BYZ-38-t0r" eventType="touchUpInside" id="Put-5g-Wzt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Z4a-9d-oWY" secondAttribute="trailing" constant="25" id="3lg-eP-7pg"/>
                             <constraint firstAttribute="trailing" secondItem="t3h-nw-PUd" secondAttribute="trailing" id="BqH-qc-7Tz"/>
+                            <constraint firstItem="Tk5-Or-RP6" firstAttribute="trailing" secondItem="Z4a-9d-oWY" secondAttribute="trailing" id="Hei-DC-vyC"/>
                             <constraint firstItem="t3h-nw-PUd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Pdc-5B-DlI"/>
                             <constraint firstItem="Z4a-9d-oWY" firstAttribute="centerY" secondItem="Qh1-xG-NTD" secondAttribute="centerY" id="WPY-pF-h1C"/>
+                            <constraint firstItem="Z4a-9d-oWY" firstAttribute="top" secondItem="Tk5-Or-RP6" secondAttribute="bottom" constant="17" id="lfR-kR-D1I"/>
                             <constraint firstItem="t3h-nw-PUd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="myl-yz-icF"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Qh1-xG-NTD" secondAttribute="bottom" constant="20" id="puM-ib-Np4"/>
                             <constraint firstItem="Qh1-xG-NTD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="25" id="tq0-sj-5j5"/>

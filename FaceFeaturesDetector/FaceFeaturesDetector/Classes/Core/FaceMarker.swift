@@ -18,8 +18,11 @@ class FaceMarker {
     }
     
     func markFace(bounds: CGRect) {
+        var convertedRect = faceView.convertRectFromImage(bounds)
+        convertedRect.origin.y = faceView.bounds.height - convertedRect.origin.y - convertedRect.height
+        
         let boundLayer = CAShapeLayer()
-        boundLayer.path = UIBezierPath(rect: bounds).CGPath
+        boundLayer.path = UIBezierPath(rect: convertedRect).CGPath
         boundLayer.strokeColor = UIColor.redColor().CGColor
         boundLayer.fillColor = UIColor.clearColor().CGColor
         faceView.layer.addSublayer(boundLayer)
@@ -28,7 +31,9 @@ class FaceMarker {
     
     func markEyes(positions: [CGPoint]) {
         let convertedPositions = positions.map { point -> CGPoint in
-            return faceView.convertImageCoordinateSpace(pointInImage: point)
+            var convertedPoint = faceView.convertPointFromImage(point)
+            convertedPoint.y = faceView.bounds.height - convertedPoint.y
+            return convertedPoint
         }
         let eyeDistance = GeometryHelper.distance(convertedPositions[0], second: convertedPositions[1])
         let eyeSize = CGSize(width: eyeDistance * 0.7, height: eyeDistance * 0.35)

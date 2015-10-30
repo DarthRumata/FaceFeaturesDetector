@@ -10,69 +10,86 @@ import UIKit
 
 extension UIImageView {
     
-    private static let screenScale = UIScreen.mainScreen().scale
-    
-    func convertImageCoordinateSpace(rectInImage rectInImage: CGRect) -> CGRect {
-        guard let image = image else {
-            fatalError("There is no image")
-        }
-        let transformedRect = CGRect(x: rectInImage.origin.x, y: image.size.height - rectInImage.origin.y - rectInImage.height, width: rectInImage.width, height: rectInImage.height)
-        let scaledRect = transformedRect.scale(1 / UIImageView.screenScale)
-        
-        let distortion = calculateImageDistortion()
-        let offset = calculateImageOffset(distortion)
-        
-        return CGRect(x: scaledRect.origin.x * distortion.width + offset.x, y: scaledRect.origin.y * distortion.height + offset.y, width: scaledRect.width * distortion.width, height: scaledRect.height * distortion.height)
-    }
-    
-    func convertImageCoordinateSpace(pointInImage pointInImage: CGPoint) -> CGPoint {
+    func convertPointFromImage(var imagePoint: CGPoint) -> CGPoint {
         guard let image = image else {
             fatalError("There is no image")
         }
         
-        let transformedPoint = CGPoint(x: pointInImage.x, y: image.size.height - pointInImage.y)
-        let scaledPoint = transformedPoint.scale(1 / UIImageView.screenScale)
+        let imageSize = image.size
+        let viewSize  = bounds.size
         
-        let distortion = calculateImageDistortion()
-        let offset = calculateImageOffset(distortion)
-        return CGPoint(x: scaledPoint.x * distortion.width + offset.x, y: scaledPoint.y * distortion.height + offset.y)
-    }
-    
-    private func calculateImageDistortion() -> CGSize {
-        guard let image = image else {
-            fatalError("There is no image")
-        }
+        let ratioX = viewSize.width / imageSize.width;
+        let ratioY = viewSize.height / imageSize.height;
         
-        let xDistortion: CGFloat
-        let yDistortion: CGFloat
         switch contentMode {
         case .ScaleToFill:
-            xDistortion = bounds.width / image.size.width * UIImageView.screenScale
-            yDistortion = bounds.height / image.size.height * UIImageView.screenScale
+            fallthrough
+        case .Redraw:
+            imagePoint.x *= ratioX
+            imagePoint.y *= ratioY
+            
         case .ScaleAspectFit:
-            if image.size.height >= image.size.width {
-                yDistortion = bounds.height / image.size.height * UIImageView.screenScale
-                xDistortion = yDistortion
-            } else {
-                xDistortion = bounds.width / image.size.width * UIImageView.screenScale
-                yDistortion = xDistortion
-            }
+            fallthrough
+        case .ScaleAspectFill:
+            let scale = contentMode == .ScaleAspectFit ? min(ratioX, ratioY) : max(ratioX, ratioY)
+            
+            imagePoint.x *= scale;
+            imagePoint.y *= scale;
+            
+            imagePoint.x += (viewSize.width  - imageSize.width  * scale) / 2
+            imagePoint.y += (viewSize.height - imageSize.height * scale) / 2
+            
+        case .Center:
+            imagePoint.x += viewSize.width / 2  - imageSize.width  / 2
+            imagePoint.y += viewSize.height / 2 - imageSize.height / 2
+            
+        case .Top:
+            imagePoint.x += viewSize.width / 2 - imageSize.width / 2
+            
+        case .Bottom:
+            imagePoint.x += viewSize.width / 2 - imageSize.width / 2
+            imagePoint.y += viewSize.height - imageSize.height
+            
+        case .Left:
+            imagePoint.y += viewSize.height / 2 - imageSize.height / 2
+            
+        case .Right:
+            imagePoint.x += viewSize.width - imageSize.width
+            imagePoint.y += viewSize.height / 2 - imageSize.height / 2
+            
+        case .TopRight:
+            imagePoint.x += viewSize.width - imageSize.width;
+            
+        case .BottomLeft:
+            imagePoint.y += viewSize.height - imageSize.height;
+            
+            
+        case .BottomRight:
+            imagePoint.x += viewSize.width  - imageSize.width;
+            imagePoint.y += viewSize.height - imageSize.height;
+            
         default:
-            yDistortion = 1
-            xDistortion = 1
+            break
         }
         
-        return CGSize(width: xDistortion, height: yDistortion)
+        return imagePoint;
     }
     
-    private func calculateImageOffset(distortion: CGSize) -> CGPoint {
-        guard let image = image else {
-            fatalError("There is no image")
-        }
+    func convertRectFromImage(imageRect: CGRect) -> CGRect {
+        let imageTopLeft = imageRect.origin;
+        let imageBottomRight = CGPointMake(CGRectGetMaxX(imageRect),
+            CGRectGetMaxY(imageRect));
         
-        let convertedImageSize = CGSize(width: image.size.width * distortion.width / UIImageView.screenScale, height: image.size.height * distortion.height / UIImageView.screenScale)
+        let viewTopLeft = convertPointFromImage(imageTopLeft)
+        let viewBottomRight = convertPointFromImage(imageBottomRight)
         
-        return CGPoint(x: (bounds.width - convertedImageSize.width) / 2, y: (bounds.height - convertedImageSize.height) / 2)
+        let origin = viewTopLeft;
+        let size = CGSize(
+            width: abs(viewBottomRight.x - viewTopLeft.x),
+            height: abs(viewBottomRight.y - viewTopLeft.y)
+        )
+        
+        return CGRect(origin: origin, size: size)
     }
     
 }
