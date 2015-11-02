@@ -21,12 +21,18 @@ private enum CIImageOrientation: Int {
 
 private let detectorOptions = [CIDetectorAccuracy: CIDetectorAccuracyHigh]
 
-class FaceRecognizer {
+class FaceRecognizer: FaceViewProcessor {
     
-    private(set) lazy var faces = [CIFaceFeature]()
     private lazy var detector = CIDetector(ofType: CIDetectorTypeFace, context: CIContext(), options: detectorOptions)
     
-    func recognize(image: UIImage) {
+    private(set) lazy var faces = [CIFaceFeature]()
+    
+    func recognize() {
+        guard let image = faceView.image else {
+            print("no image")
+            return
+        }
+        
         faces.removeAll()
         
         let normalizedImage = image.normalOrientedImage()
@@ -34,16 +40,13 @@ class FaceRecognizer {
             CIDetectorEyeBlink: NSNumber(bool: true),
             CIDetectorSmile: NSNumber(bool: true),
         ]
-        let detectedFeatures = detector.featuresInImage(CIImage(image: normalizedImage)!, options: featureOptions)
-        faces.appendContentsOf(detectedFeatures.reduce([CIFaceFeature]()) { (var features, current) -> [CIFaceFeature] in
-            if let feature = current as? CIFaceFeature {
-                features.append(feature)
-            }
-            
-            return features
-        })
+        faces = detector.featuresInImage(CIImage(image: normalizedImage)!, options: featureOptions) as! [CIFaceFeature]
     }
     
-   
+    func detectEyesColor() {
+        //TODO create more convient method
+        let face = faces.first!
+        
+    }
     
 }

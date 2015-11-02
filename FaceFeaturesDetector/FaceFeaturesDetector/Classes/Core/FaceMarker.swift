@@ -8,18 +8,12 @@
 
 import UIKit
 
-class FaceMarker {
+class FaceMarker: FaceViewProcessor {
     
     private lazy var marks = [CALayer]()
-    private let faceView: UIImageView
-    
-    init(faceView: UIImageView) {
-        self.faceView = faceView
-    }
     
     func markFace(bounds: CGRect) {
-        var convertedRect = faceView.convertRectFromImage(bounds)
-        convertedRect.origin.y = faceView.bounds.height - convertedRect.origin.y - convertedRect.height
+        let convertedRect = convertRectFromCoreImageAxes(bounds)
         
         let boundLayer = CAShapeLayer()
         boundLayer.path = UIBezierPath(rect: convertedRect).CGPath
@@ -29,14 +23,20 @@ class FaceMarker {
         marks.append(boundLayer)
     }
     
-    func markEyes(positions: [CGPoint]) {
-        let convertedPositions = positions.map { point -> CGPoint in
-            var convertedPoint = faceView.convertPointFromImage(point)
-            convertedPoint.y = faceView.bounds.height - convertedPoint.y
-            return convertedPoint
+    func markEyes(face: CIFaceFeature) {
+        var eyes = [CGPoint]()
+        if face.hasLeftEyePosition {
+            eyes.append(face.leftEyePosition)
         }
-        let eyeDistance = GeometryHelper.distance(convertedPositions[0], second: convertedPositions[1])
-        let eyeSize = CGSize(width: eyeDistance * 0.7, height: eyeDistance * 0.35)
+        if face.hasRightEyePosition {
+            eyes.append(face.rightEyePosition)
+        }
+        let convertedBounds = convertRectFromCoreImageAxes(face.bounds)
+        let eyeSize = CGSize(width: convertedBounds.width * 0.25, height: convertedBounds.width * 0.13)
+        
+        let convertedPositions = eyes.map { point -> CGPoint in
+            return convertPointFromCoreImageAxes(point)
+        }
         for position in convertedPositions {
             let eyeRect = CGRect(x: position.x - eyeSize.width / 2, y: position.y - eyeSize.height / 2, width: eyeSize.width, height: eyeSize.height)
             let eyeLayer = CAShapeLayer()

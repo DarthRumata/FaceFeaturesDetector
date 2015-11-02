@@ -14,7 +14,7 @@ class FaceRecognizeController: UIViewController {
     @IBOutlet private weak var photoView: UIImageView!
     
     private lazy var marker: FaceMarker = FaceMarker(faceView: self.photoView)
-    private let faceRecognizer = FaceRecognizer()
+    private lazy var faceRecognizer: FaceRecognizer = FaceRecognizer(faceView: self.photoView)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,13 +31,8 @@ class FaceRecognizeController: UIViewController {
     }
     
     @IBAction func recognize() {
-        guard let image = photoView.image else {
-            print("no image")
-            return
-        }
-        
         marker.removeAllMarks()
-        faceRecognizer.recognize(image)
+        faceRecognizer.recognize()
         
         guard !faceRecognizer.faces.isEmpty else {
             print("Recognition failed")
@@ -46,7 +41,8 @@ class FaceRecognizeController: UIViewController {
         
         for face in faceRecognizer.faces {
             marker.markFace(face.bounds)
-            marker.markEyes([face.leftEyePosition, face.rightEyePosition])
+            
+            marker.markEyes(face)
         }
     }
     
