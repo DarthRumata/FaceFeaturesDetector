@@ -20,4 +20,8 @@ extension CGRect {
         return CGRect(x: origin.x * scale, y: origin.y * scale, width: width * scale, height: height * scale)
     }
     
+    static func create(center: CGPoint, size: CGSize) -> CGRect {
+        return CGRect(x: center.x - size.width / 2, y: center.y - size.height / 2, width: size.width, height: size.height)
+    }
+    
 }

@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		920E679F1BE7853400A16DAC /* Eye.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E679E1BE7853400A16DAC /* Eye.swift */; };
 		9292A8A31BDFFD03005CDE76 /* FaceRecognizeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9292A8A11BDFFD03005CDE76 /* FaceRecognizeController.swift */; };
 		9292A8AB1BDFFD10005CDE76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9292A8A51BDFFD10005CDE76 /* Assets.xcassets */; };
 		9292A8AC1BDFFD10005CDE76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9292A8A61BDFFD10005CDE76 /* LaunchScreen.storyboard */; };
 		9292A8AD1BDFFD10005CDE76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9292A8A81BDFFD10005CDE76 /* Main.storyboard */; };
-		9292A8AE1BDFFD10005CDE76 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9292A8AA1BDFFD10005CDE76 /* Info.plist */; };
 		9292A8B11BDFFD37005CDE76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9292A8B01BDFFD37005CDE76 /* AppDelegate.swift */; };
 		9292A8B41BE018B1005CDE76 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9292A8B31BE018B1005CDE76 /* UIImageView.swift */; };
 		92D9660C1BE1993200F4A669 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D9660B1BE1993200F4A669 /* CGRect.swift */; };
@@ -20,9 +20,19 @@
 		92D966131BE2C91800F4A669 /* FaceMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D966121BE2C91800F4A669 /* FaceMarker.swift */; };
 		92D966151BE2CB9100F4A669 /* FaceRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D966141BE2CB9100F4A669 /* FaceRecognizer.swift */; };
 		92E16C5F1BE3C77600969CE9 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E16C5E1BE3C77600969CE9 /* UIImage.swift */; };
+		92E16C6E1BE3D59000969CE9 /* ColorDifference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E16C621BE3D59000969CE9 /* ColorDifference.swift */; };
+		92E16C6F1BE3D59000969CE9 /* ColorSpaceConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E16C641BE3D59000969CE9 /* ColorSpaceConversion.m */; };
+		92E16C701BE3D59000969CE9 /* DominantColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E16C661BE3D59000969CE9 /* DominantColors.swift */; };
+		92E16C721BE3D59000969CE9 /* INVector3.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E16C691BE3D59000969CE9 /* INVector3.m */; };
+		92E16C731BE3D59000969CE9 /* INVector3SwiftExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E16C6A1BE3D59000969CE9 /* INVector3SwiftExtensions.swift */; };
+		92E16C741BE3D59000969CE9 /* KMeans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E16C6B1BE3D59000969CE9 /* KMeans.swift */; };
+		92E16C751BE3D59000969CE9 /* Memoization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E16C6C1BE3D59000969CE9 /* Memoization.swift */; };
+		92E16C761BE3D59000969CE9 /* PlatformExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E16C6D1BE3D59000969CE9 /* PlatformExtensions.swift */; };
+		92E16C791BE3E71200969CE9 /* FaceViewProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E16C781BE3E71200969CE9 /* FaceViewProcessor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		920E679E1BE7853400A16DAC /* Eye.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Eye.swift; sourceTree = "<group>"; };
 		9292A88A1BDFFCAC005CDE76 /* FaceFeaturesDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceFeaturesDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9292A8A11BDFFD03005CDE76 /* FaceRecognizeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceRecognizeController.swift; sourceTree = "<group>"; };
 		9292A8A51BDFFD10005CDE76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -37,6 +47,19 @@
 		92D966121BE2C91800F4A669 /* FaceMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceMarker.swift; sourceTree = "<group>"; };
 		92D966141BE2CB9100F4A669 /* FaceRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceRecognizer.swift; sourceTree = "<group>"; };
 		92E16C5E1BE3C77600969CE9 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		92E16C621BE3D59000969CE9 /* ColorDifference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorDifference.swift; sourceTree = "<group>"; };
+		92E16C631BE3D59000969CE9 /* ColorSpaceConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorSpaceConversion.h; sourceTree = "<group>"; };
+		92E16C641BE3D59000969CE9 /* ColorSpaceConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorSpaceConversion.m; sourceTree = "<group>"; };
+		92E16C651BE3D59000969CE9 /* DominantColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DominantColor.h; sourceTree = "<group>"; };
+		92E16C661BE3D59000969CE9 /* DominantColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DominantColors.swift; sourceTree = "<group>"; };
+		92E16C681BE3D59000969CE9 /* INVector3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INVector3.h; sourceTree = "<group>"; };
+		92E16C691BE3D59000969CE9 /* INVector3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INVector3.m; sourceTree = "<group>"; };
+		92E16C6A1BE3D59000969CE9 /* INVector3SwiftExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVector3SwiftExtensions.swift; sourceTree = "<group>"; };
+		92E16C6B1BE3D59000969CE9 /* KMeans.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMeans.swift; sourceTree = "<group>"; };
+		92E16C6C1BE3D59000969CE9 /* Memoization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Memoization.swift; sourceTree = "<group>"; };
+		92E16C6D1BE3D59000969CE9 /* PlatformExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformExtensions.swift; sourceTree = "<group>"; };
+		92E16C771BE3D62A00969CE9 /* FaceFeaturesDetector-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FaceFeaturesDetector-Bridging-Header.h"; sourceTree = "<group>"; };
+		92E16C781BE3E71200969CE9 /* FaceViewProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceViewProcessor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,9 +73,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		920E679D1BE7852A00A16DAC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				920E679E1BE7853400A16DAC /* Eye.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		9292A8811BDFFCAC005CDE76 = {
 			isa = PBXGroup;
 			children = (
+				92E16C771BE3D62A00969CE9 /* FaceFeaturesDetector-Bridging-Header.h */,
 				9292A88C1BDFFCAC005CDE76 /* FaceFeaturesDetector */,
 				9292A88B1BDFFCAC005CDE76 /* Products */,
 			);
@@ -69,6 +101,7 @@
 		9292A88C1BDFFCAC005CDE76 /* FaceFeaturesDetector */ = {
 			isa = PBXGroup;
 			children = (
+				92E16C601BE3D55400969CE9 /* Frameworks */,
 				9292A8A41BDFFD10005CDE76 /* Resources */,
 				9292A89F1BDFFD03005CDE76 /* Classes */,
 			);
@@ -99,10 +132,12 @@
 		9292A8AF1BDFFD37005CDE76 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				920E679D1BE7852A00A16DAC /* Models */,
 				92D9660D1BE2239D00F4A669 /* Utilities */,
 				9292A8B01BDFFD37005CDE76 /* AppDelegate.swift */,
 				92D966121BE2C91800F4A669 /* FaceMarker.swift */,
 				92D966141BE2CB9100F4A669 /* FaceRecognizer.swift */,
+				92E16C781BE3E71200969CE9 /* FaceViewProcessor.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -124,6 +159,33 @@
 				92D9660E1BE2243300F4A669 /* GeometryHelper.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		92E16C601BE3D55400969CE9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92E16C611BE3D59000969CE9 /* DominantColor */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		92E16C611BE3D59000969CE9 /* DominantColor */ = {
+			isa = PBXGroup;
+			children = (
+				92E16C621BE3D59000969CE9 /* ColorDifference.swift */,
+				92E16C631BE3D59000969CE9 /* ColorSpaceConversion.h */,
+				92E16C641BE3D59000969CE9 /* ColorSpaceConversion.m */,
+				92E16C651BE3D59000969CE9 /* DominantColor.h */,
+				92E16C661BE3D59000969CE9 /* DominantColors.swift */,
+				92E16C681BE3D59000969CE9 /* INVector3.h */,
+				92E16C691BE3D59000969CE9 /* INVector3.m */,
+				92E16C6A1BE3D59000969CE9 /* INVector3SwiftExtensions.swift */,
+				92E16C6B1BE3D59000969CE9 /* KMeans.swift */,
+				92E16C6C1BE3D59000969CE9 /* Memoization.swift */,
+				92E16C6D1BE3D59000969CE9 /* PlatformExtensions.swift */,
+			);
+			name = DominantColor;
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,7 +249,6 @@
 				9292A8AB1BDFFD10005CDE76 /* Assets.xcassets in Resources */,
 				9292A8AD1BDFFD10005CDE76 /* Main.storyboard in Resources */,
 				9292A8AC1BDFFD10005CDE76 /* LaunchScreen.storyboard in Resources */,
-				9292A8AE1BDFFD10005CDE76 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,15 +259,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92E16C761BE3D59000969CE9 /* PlatformExtensions.swift in Sources */,
 				92D966111BE22C1E00F4A669 /* CGpoint.swift in Sources */,
+				92E16C721BE3D59000969CE9 /* INVector3.m in Sources */,
+				92E16C6F1BE3D59000969CE9 /* ColorSpaceConversion.m in Sources */,
 				92D9660F1BE2243300F4A669 /* GeometryHelper.swift in Sources */,
 				9292A8B11BDFFD37005CDE76 /* AppDelegate.swift in Sources */,
+				92E16C731BE3D59000969CE9 /* INVector3SwiftExtensions.swift in Sources */,
 				9292A8B41BE018B1005CDE76 /* UIImageView.swift in Sources */,
+				92E16C791BE3E71200969CE9 /* FaceViewProcessor.swift in Sources */,
 				92D966131BE2C91800F4A669 /* FaceMarker.swift in Sources */,
+				92E16C751BE3D59000969CE9 /* Memoization.swift in Sources */,
 				9292A8A31BDFFD03005CDE76 /* FaceRecognizeController.swift in Sources */,
+				92E16C6E1BE3D59000969CE9 /* ColorDifference.swift in Sources */,
 				92E16C5F1BE3C77600969CE9 /* UIImage.swift in Sources */,
+				920E679F1BE7853400A16DAC /* Eye.swift in Sources */,
 				92D966151BE2CB9100F4A669 /* FaceRecognizer.swift in Sources */,
 				92D9660C1BE1993200F4A669 /* CGRect.swift in Sources */,
+				92E16C701BE3D59000969CE9 /* DominantColors.swift in Sources */,
+				92E16C741BE3D59000969CE9 /* KMeans.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +394,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yalantis.FaceFeaturesDetector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FaceFeaturesDetector-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -334,6 +406,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yalantis.FaceFeaturesDetector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FaceFeaturesDetector-Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -16,18 +16,28 @@ class FaceViewProcessor {
         self.faceView = faceView
     }
     
-    func convertRectFromCoreImageAxes(rect: CGRect) -> CGRect {
-        var convertedRect = faceView.convertRectFromImage(rect)
-        convertedRect.origin.y = faceView.bounds.height - convertedRect.origin.y - convertedRect.height
+    func transformPointFromCoreImageAxes(var point: CGPoint, toView: Bool = true) -> CGPoint {
+        point.y = (toView ? faceView.bounds.height : faceView.image!.size.height) - point.y
         
-        return convertedRect
+        return point
     }
     
-    func convertPointFromCoreImageAxes(point: CGPoint) -> CGPoint {
-        var convertedPoint = faceView.convertPointFromImage(point)
-        convertedPoint.y = faceView.bounds.height - convertedPoint.y
+    func transformRectFromCoreImageAxes(var rect: CGRect, toView: Bool = true) -> CGRect {
+        rect.origin.y = (toView ? faceView.bounds.height : faceView.image!.size.height) - rect.origin.y - rect.height
         
-        return convertedPoint
+        return rect
+    }
+    
+    func convertToVisiblePointFromCoreImageAxes(point: CGPoint) -> CGPoint {
+        let convertedPoint = faceView.convertPointFromImage(point)
+        
+        return transformPointFromCoreImageAxes(convertedPoint)
+    }
+    
+    func convertToVisibleRectFromCoreImageAxes(rect: CGRect) -> CGRect {
+        let convertedRect = faceView.convertRectFromImage(rect)
+        
+        return transformRectFromCoreImageAxes(convertedRect)
     }
     
 }

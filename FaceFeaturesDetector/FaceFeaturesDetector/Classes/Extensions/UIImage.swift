@@ -75,4 +75,23 @@ extension UIImage {
         return img
     }
     
+    func cropRect(cropRect: CGRect, keepCanvasSize: Bool = false) -> UIImage {
+        print("image \(CGImage) rect \(cropRect)")
+        let imageRef = CGImageCreateWithImageInRect(CGImage, cropRect)!
+        
+        // Create new cropped UIImage
+        var croppedImage = UIImage(CGImage: imageRef, scale: scale, orientation: imageOrientation)
+        
+        if keepCanvasSize {
+            UIGraphicsBeginImageContext(size)
+            
+            UIColor.clearColor().setFill()
+            croppedImage.drawInRect(CGRect(x: 0, y: 0, width: croppedImage.size.width, height: croppedImage.size.height))
+            croppedImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+        }
+        
+        return croppedImage
+    }
+    
 }

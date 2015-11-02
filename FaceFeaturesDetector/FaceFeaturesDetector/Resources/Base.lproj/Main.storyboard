@@ -3,57 +3,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
-        <scene sceneID="Cvk-P4-47r">
-            <objects>
-                <tableViewController id="wbO-3c-qDf" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7Hl-ir-aeM">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="9oB-ya-duI">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9oB-ya-duI" id="2fy-TW-CxI">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
-                                </tableViewCellContentView>
-                                <animations/>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="wbO-3c-qDf" id="EC6-N7-fEu"/>
-                            <outlet property="delegate" destination="wbO-3c-qDf" id="fWl-hO-XEu"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="sc2-dQ-Mln"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="76I-vA-ErK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2" y="-28"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="b60-A1-h4t">
-            <objects>
-                <navigationController id="zWI-CG-OyE" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fZO-FK-DPe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="wbO-3c-qDf" kind="relationship" relationship="rootViewController" id="MhE-uh-52D"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cYy-sw-IaN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-822" y="-28"/>
-        </scene>
         <!--Face Recognize Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -97,14 +49,40 @@
                                     <action selector="takePhoto" destination="BYZ-38-t0r" eventType="touchUpInside" id="Put-5g-Wzt"/>
                                 </connections>
                             </button>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="51a-1I-Hur" userLabel="leftEye">
+                                <rect key="frame" x="25" y="365" width="60" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Agn-Rx-zre"/>
+                                    <constraint firstAttribute="width" secondItem="51a-1I-Hur" secondAttribute="height" multiplier="2:1" id="hrN-aa-cbj"/>
+                                </constraints>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jsL-KQ-cQG" userLabel="rightEye">
+                                <rect key="frame" x="515" y="365" width="60" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="JLr-Uw-dSx"/>
+                                    <constraint firstAttribute="width" secondItem="jsL-KQ-cQG" secondAttribute="height" multiplier="2:1" id="Js5-zm-wTf"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Js5-zm-wTf"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="51a-1I-Hur" firstAttribute="top" secondItem="t3h-nw-PUd" secondAttribute="bottom" constant="25" id="0Oe-Qa-tq4"/>
                             <constraint firstAttribute="trailing" secondItem="Z4a-9d-oWY" secondAttribute="trailing" constant="25" id="3lg-eP-7pg"/>
                             <constraint firstAttribute="trailing" secondItem="t3h-nw-PUd" secondAttribute="trailing" id="BqH-qc-7Tz"/>
                             <constraint firstItem="Tk5-Or-RP6" firstAttribute="trailing" secondItem="Z4a-9d-oWY" secondAttribute="trailing" id="Hei-DC-vyC"/>
+                            <constraint firstAttribute="trailing" secondItem="jsL-KQ-cQG" secondAttribute="trailing" constant="25" id="KgH-pf-hgC"/>
+                            <constraint firstItem="jsL-KQ-cQG" firstAttribute="width" secondItem="jsL-KQ-cQG" secondAttribute="height" multiplier="2:1" id="L42-OZ-0Au"/>
                             <constraint firstItem="t3h-nw-PUd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Pdc-5B-DlI"/>
+                            <constraint firstItem="jsL-KQ-cQG" firstAttribute="top" secondItem="t3h-nw-PUd" secondAttribute="bottom" constant="25" id="QJc-aX-Wqe"/>
+                            <constraint firstItem="51a-1I-Hur" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="25" id="Ut6-vZ-CVK"/>
                             <constraint firstItem="Z4a-9d-oWY" firstAttribute="centerY" secondItem="Qh1-xG-NTD" secondAttribute="centerY" id="WPY-pF-h1C"/>
                             <constraint firstItem="Z4a-9d-oWY" firstAttribute="top" secondItem="Tk5-Or-RP6" secondAttribute="bottom" constant="17" id="lfR-kR-D1I"/>
                             <constraint firstItem="t3h-nw-PUd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="myl-yz-icF"/>
@@ -113,11 +91,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="leftEye" destination="51a-1I-Hur" id="3AH-Lm-rHw"/>
                         <outlet property="photoView" destination="t3h-nw-PUd" id="1BK-el-TB5"/>
+                        <outlet property="rightEye" destination="jsL-KQ-cQG" id="MMK-SR-qFt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="390" y="-130"/>
         </scene>
     </scenes>
 </document>
