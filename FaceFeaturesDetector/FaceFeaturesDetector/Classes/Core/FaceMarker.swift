@@ -32,7 +32,7 @@ class FaceMarker: FaceViewProcessor {
             eyes.append(face.rightEyePosition)
         }
         let convertedBounds = convertToVisibleRectFromCoreImageAxes(face.bounds)
-        let eyeSize = CGSize(width: convertedBounds.width * 0.25, height: convertedBounds.width * 0.13)
+        let eyeSize = CGSize(width: convertedBounds.width * 0.15, height: convertedBounds.width * 0.13)
         
         let convertedPositions = eyes.map { point -> CGPoint in
             return convertToVisiblePointFromCoreImageAxes(point)

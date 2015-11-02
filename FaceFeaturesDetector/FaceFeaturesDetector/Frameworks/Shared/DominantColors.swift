@@ -12,6 +12,13 @@ import Foundation
 import UIKit
 #endif
 
+public struct ColorCluster {
+    
+    let color: CGColor
+    let size: Int
+    
+}
+
 // MARK: Bitmaps
 
 private struct RGBAPixel {
@@ -120,7 +127,7 @@ public func dominantColorsInImage(
         accuracy: GroupingAccuracy = DefaultParameterValues.accuracy,
         seed: UInt32 = DefaultParameterValues.seed,
         memoizeConversions: Bool = DefaultParameterValues.memoizeConversions
-    ) -> [CGColor] {
+    ) -> [ColorCluster] {
     
     let (width, height) = (CGImageGetWidth(image), CGImageGetHeight(image))
     let (scaledWidth, scaledHeight) = scaledDimensionsForPixelLimit(maxSampledPixels, width: width, height: height)
@@ -153,7 +160,7 @@ public func dominantColorsInImage(
     // most dominant colors come first.
     clusters.sortInPlace { $0.size > $1.size }
     
-    return clusters.map { RGBVectorToCGColor(IN_LABToRGB($0.centroid)) }
+    return clusters.map { ColorCluster(color: RGBVectorToCGColor(IN_LABToRGB($0.centroid)), size: $0.size) }
 }
 
 private func distanceForAccuracy(accuracy: GroupingAccuracy) -> (INVector3, INVector3) -> Float {

@@ -62,15 +62,23 @@ class FaceRecognizer: FaceViewProcessor {
             return transformPointFromCoreImageAxes(point, toView: false)
         }
         let transformedBounds = transformRectFromCoreImageAxes(face.bounds, toView: false)
-        let eyeSize = CGSize(width: transformedBounds.width * 0.14, height: transformedBounds.width * 0.08)
+        let eyeSize = CGSize(width: transformedBounds.width * 0.1, height: transformedBounds.width * 0.08)
         
         for eye in transformedPositions {
             let frame = CGRect.create(eye, size: eyeSize)
             let eyeImage = image.cropRect(frame)
             
-            let colors = dominantColorsInImage(eyeImage.CGImage!)
-            eyes.append(Eye(image: eyeImage, colors: colors))
-            print(colors)
+            var colorClusters = dominantColorsInImage(eyeImage.CGImage!)
+            let totalPixelCount = colorClusters.reduce(0) { (count, cluster) -> Int in
+                return count + cluster.size
+            }
+            colorClusters = colorClusters.filter { cluster -> Bool in
+                let percent = Float(cluster.size) / Float(totalPixelCount)
+                return percent > 0.05
+            }
+            
+            eyes.append(Eye(image: eyeImage, colors: colorClusters.map { $0.color }))
+            print(colorClusters)
         }
         
         return eyes
