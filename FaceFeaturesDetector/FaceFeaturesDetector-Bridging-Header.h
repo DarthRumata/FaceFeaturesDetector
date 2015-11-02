@@ -10,5 +10,6 @@
 #define FaceFeaturesDetector_Bridging_Header_h
 
 #import "DominantColor.h"
+#import "OpenCVHelper.h"
 
 #endif /* FaceFeaturesDetector_Bridging_Header_h */

@@ -66,7 +66,8 @@ class FaceRecognizer: FaceViewProcessor {
         
         for eye in transformedPositions {
             let frame = CGRect.create(eye, size: eyeSize)
-            let eyeImage = image.cropRect(frame)
+            let image = image.cropRect(frame)
+            let eyeImage = OpenCVHelper.convertImageToGrayscale(image)
             
             var colorClusters = dominantColorsInImage(eyeImage.CGImage!)
             let totalPixelCount = colorClusters.reduce(0) { (count, cluster) -> Int in

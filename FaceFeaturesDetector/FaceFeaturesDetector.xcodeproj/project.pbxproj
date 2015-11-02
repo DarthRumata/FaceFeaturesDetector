@@ -19,6 +19,9 @@
 		92D966111BE22C1E00F4A669 /* CGpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D966101BE22C1E00F4A669 /* CGpoint.swift */; };
 		92D966131BE2C91800F4A669 /* FaceMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D966121BE2C91800F4A669 /* FaceMarker.swift */; };
 		92D966151BE2CB9100F4A669 /* FaceRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D966141BE2CB9100F4A669 /* FaceRecognizer.swift */; };
+		92DB85071BE7DBA2008C3A47 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92DB85061BE7DBA2008C3A47 /* opencv2.framework */; };
+		92DB850C1BE7DF7F008C3A47 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92DB850B1BE7DF7F008C3A47 /* AssetsLibrary.framework */; };
+		92DB850F1BE7E02A008C3A47 /* OpenCVHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 92DB850E1BE7E02A008C3A47 /* OpenCVHelper.mm */; };
 		92E16C5F1BE3C77600969CE9 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E16C5E1BE3C77600969CE9 /* UIImage.swift */; };
 		92E16C6E1BE3D59000969CE9 /* ColorDifference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E16C621BE3D59000969CE9 /* ColorDifference.swift */; };
 		92E16C6F1BE3D59000969CE9 /* ColorSpaceConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E16C641BE3D59000969CE9 /* ColorSpaceConversion.m */; };
@@ -46,6 +49,10 @@
 		92D966101BE22C1E00F4A669 /* CGpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGpoint.swift; sourceTree = "<group>"; };
 		92D966121BE2C91800F4A669 /* FaceMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceMarker.swift; sourceTree = "<group>"; };
 		92D966141BE2CB9100F4A669 /* FaceRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceRecognizer.swift; sourceTree = "<group>"; };
+		92DB85061BE7DBA2008C3A47 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		92DB850B1BE7DF7F008C3A47 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		92DB850D1BE7E02A008C3A47 /* OpenCVHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCVHelper.h; sourceTree = "<group>"; };
+		92DB850E1BE7E02A008C3A47 /* OpenCVHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVHelper.mm; sourceTree = "<group>"; };
 		92E16C5E1BE3C77600969CE9 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		92E16C621BE3D59000969CE9 /* ColorDifference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorDifference.swift; sourceTree = "<group>"; };
 		92E16C631BE3D59000969CE9 /* ColorSpaceConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorSpaceConversion.h; sourceTree = "<group>"; };
@@ -67,6 +74,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92DB850C1BE7DF7F008C3A47 /* AssetsLibrary.framework in Frameworks */,
+				92DB85071BE7DBA2008C3A47 /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +93,7 @@
 		9292A8811BDFFCAC005CDE76 = {
 			isa = PBXGroup;
 			children = (
+				92DB850B1BE7DF7F008C3A47 /* AssetsLibrary.framework */,
 				92E16C771BE3D62A00969CE9 /* FaceFeaturesDetector-Bridging-Header.h */,
 				9292A88C1BDFFCAC005CDE76 /* FaceFeaturesDetector */,
 				9292A88B1BDFFCAC005CDE76 /* Products */,
@@ -157,6 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				92D9660E1BE2243300F4A669 /* GeometryHelper.swift */,
+				92DB850D1BE7E02A008C3A47 /* OpenCVHelper.h */,
+				92DB850E1BE7E02A008C3A47 /* OpenCVHelper.mm */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -164,6 +176,7 @@
 		92E16C601BE3D55400969CE9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				92DB85061BE7DBA2008C3A47 /* opencv2.framework */,
 				92E16C611BE3D59000969CE9 /* DominantColor */,
 			);
 			path = Frameworks;
@@ -267,6 +280,7 @@
 				9292A8B11BDFFD37005CDE76 /* AppDelegate.swift in Sources */,
 				92E16C731BE3D59000969CE9 /* INVector3SwiftExtensions.swift in Sources */,
 				9292A8B41BE018B1005CDE76 /* UIImageView.swift in Sources */,
+				92DB850F1BE7E02A008C3A47 /* OpenCVHelper.mm in Sources */,
 				92E16C791BE3E71200969CE9 /* FaceViewProcessor.swift in Sources */,
 				92D966131BE2C91800F4A669 /* FaceMarker.swift in Sources */,
 				92E16C751BE3D59000969CE9 /* Memoization.swift in Sources */,
@@ -390,6 +404,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FaceFeaturesDetector/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "$(SRCROOT)/FaceFeaturesDetector/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yalantis.FaceFeaturesDetector;
@@ -402,6 +423,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FaceFeaturesDetector/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "$(SRCROOT)/FaceFeaturesDetector/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yalantis.FaceFeaturesDetector;
